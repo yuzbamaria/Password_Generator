@@ -88,8 +88,18 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+// declare variables globally for password object itself and each property&value
+
 // Function to prompt user for password options
 function getPasswordOptions() {
+
+// Present a series of prompts for password criteria
+// Prompt user to choose the desired password length – at least 8 characters but no more than 128.
+// If statement: if the length is less or more the required one, alert user about the required length 
+// Use confirm 4 times so that user can confirm whether they want to include 4 types of characters
+// If statement: if user hasn't chosen any characters type, use alert to guide user to choose any type
+// Function `getPasswordOptions` returns an object (return statement) with user choices: length & 4 character types 
+
 
 }
 
