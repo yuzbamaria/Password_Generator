@@ -142,13 +142,23 @@ userPasswordOptions = getPasswordOptions();
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+// Use math.floor (rounds down) and math.random (generates random number) to get a random index of each 4 arrays
+  let randomArrElement = Math.floor(Math.random() * arr.length);
+// Return an element at a randomly generated index
+  return arr[randomArrElement];
 }
 
 // Function to generate password with user input
 function generatePassword() {
 
+// Generate random element from specialCharacters array (initialise a variable, )
+// Add this random element to generatePassword function
+let randomSpecialCharacter = getRandom(includeSpecialCharacters);
+// console.log(randomSpecialCharacter);
+
 }
+
+generatePassword();
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
