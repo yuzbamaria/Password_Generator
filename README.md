@@ -22,4 +22,4 @@ Generate a password when the button is clicked:
 https://yuzbamaria.github.io/Password_Generator/
 
 ## A screenshot of the application
-![screenshot-password-generator](password_generator.png)
+![screenshot-password-generator](assets/password_generator.png)
