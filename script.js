@@ -116,7 +116,7 @@ if (passwordLength < 8 || passwordLength > 128) {
 // Use confirm 4 times so that user can confirm whether they want to include 4 types of characters
   includeSpecialCharacters = confirm("Would you like to include special characters in your password? For example, @, %, +, /, ', !, etc.");
   includeNumbers = confirm("Would you like to include include numbers in your password? For example, 0, 1, 2, 3, 4, etc.");
-  includeLowerCasedCharacters = confirm("Would you like to include lowercased characters? For example. a, b, c, d, etc.");
+   = confirm("Would you like to include lowercased characters? For example. a, b, c, d, etc.");
   includeUpperCasedCharacters = confirm("Would you like to include uppercased characters? For example, A, B, C, D, etc.");
 
 // If statement: if user hasn't chosen any characters type, use alert to guide user to choose any type
