@@ -136,29 +136,67 @@ if (!(includeSpecialCharacters || includeNumbers || includeUpperCasedCharacters 
     includeLowerCasedCharacters: includeLowerCasedCharacters,
   };
 }
-userPasswordOptions = getPasswordOptions();
+// userPasswordOptions = getPasswordOptions();
 // console.log(userPasswordOptions);
  
 
 // Function for getting a random element from an array
 function getRandom(arr) {
 // Use math.floor (rounds down) and math.random (generates random number) to get a random index of each 4 arrays
-  let randomArrElement = Math.floor(Math.random() * arr.length);
-// Return an element at a randomly generated index
-  return arr[randomArrElement];
+  let randomArrIndex = Math.floor(Math.random() * arr.length);
+  let randomArrElement = arr[randomArrIndex]; 
+  // Return an element at a randomly generated index
+  return randomArrElement;
 }
+
+// Generate random element from 4 arrays (initialise variables)
+// Add these random elements to generatePassword function
+let randomSpecialCharacters = getRandom(specialCharacters);
+// console.log(randomSpecialCharacters);
+  
+let randomNumbers = getRandom(numericCharacters);
+// console.log(randomNumbers);
+  
+let randomUpperCasedCharacters = getRandom(upperCasedCharacters);
+// console.log(randomUpperCasedCharacters); 
+  
+let randomLowerCasedCharacters = getRandom(lowerCasedCharacters);
+// console.log(randomLowerCasedCharacters);
 
 // Function to generate password with user input
 function generatePassword() {
+  userPasswordOptions = getPasswordOptions();
 
-// Generate random element from specialCharacters array (initialise a variable, )
-// Add this random element to generatePassword function
-let randomSpecialCharacter = getRandom(includeSpecialCharacters);
-// console.log(randomSpecialCharacter);
+  let finalPassword = '';
 
+  if (userPasswordOptions.includeSpecialCharacters) {
+    finalPassword += specialCharacters.join('');
+  }
+
+  if (userPasswordOptions.includeNumbers) {
+    finalPassword += numericCharacters.join('');
+  }
+
+  if (userPasswordOptions.includeUpperCasedCharacters) {
+    finalPassword += upperCasedCharacters.join('');
+  }
+  
+  if (userPasswordOptions.includeLowerCasedCharacters) {
+    finalPassword += lowerCasedCharacters.join('');
+  }
+  
+
+// Update the length of the password according to user choice
+// ....initialise an empty string variable to store user desired password length
+// ....loop through userPasswordOptions 
+let generatedPassword = '';
+  for (let i = 0; i < userPasswordOptions.length; i++) {
+    let randomIndex = Math.floor(Math.random() * finalPassword.length);
+    generatedPassword += finalPassword[randomIndex];
+  }
+  // console.log(generatedPassword);
+  return generatedPassword;
 }
-
-generatePassword();
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
